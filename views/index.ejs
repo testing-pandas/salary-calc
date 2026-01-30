@@ -1,0 +1,102 @@
+<section class="hero">
+    <div class="container">
+        <h1 class="hero-title">Salary Calculator</h1>
+        <p class="hero-subtitle">Convert your hourly wage to yearly, monthly, weekly, and daily income instantly</p>
+
+        <div class="quick-calc-card">
+            <div class="quick-calc-input">
+                <label for="hourlyRate">Enter Hourly Rate</label>
+                <div class="input-group">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="hourlyRate" value="25" min="1" max="500" step="1">
+                    <span class="input-suffix">/hour</span>
+                </div>
+            </div>
+
+            <div class="quick-calc-results">
+                <div class="result-item">
+                    <span class="result-label">Daily</span>
+                    <span class="result-value" id="dailyResult">$200</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Weekly</span>
+                    <span class="result-value" id="weeklyResult">$1,000</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Monthly</span>
+                    <span class="result-value" id="monthlyResult">$4,333</span>
+                </div>
+                <div class="result-item result-item-highlight">
+                    <span class="result-label">Yearly</span>
+                    <span class="result-value" id="yearlyResult">$52,000</span>
+                </div>
+            </div>
+
+            <a href="#" id="viewDetailedCalc" class="btn btn-secondary">View Detailed Breakdown →</a>
+        </div>
+    </div>
+</section>
+
+<section class="popular-rates">
+    <div class="container">
+        <h2 class="section-title">Popular Hourly Rate Calculators</h2>
+        <p class="section-subtitle">Select an hourly rate to see the full salary breakdown</p>
+
+        <div class="rates-grid">
+            <% popularRates.forEach(function(item) { %>
+                <a href="<%= item.url %>" class="rate-card">
+                    <div class="rate-header">
+                        <span class="rate-amount">$<%= item.rate %></span>
+                        <span class="rate-per">/hour</span>
+                    </div>
+                    <div class="rate-conversions">
+                        <div class="rate-row">
+                            <span>Weekly</span>
+                            <span>
+                                <%= formatCurrency(item.salaries.weekly) %>
+                            </span>
+                        </div>
+                        <div class="rate-row">
+                            <span>Monthly</span>
+                            <span>
+                                <%= formatCurrency(item.salaries.monthly) %>
+                            </span>
+                        </div>
+                        <div class="rate-row rate-row-highlight">
+                            <span>Yearly</span>
+                            <span>
+                                <%= formatCurrency(item.salaries.yearly) %>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+        </div>
+    </div>
+</section>
+
+<section class="all-rates">
+    <div class="container">
+        <h2 class="section-title">All Hourly Rate Calculators</h2>
+        <div class="all-rates-grid">
+            <% allRates.forEach(function(rate) { %>
+                <a href="/salary-calculator/<%= rate %>-dollar-per-hour/" class="all-rate-link">$<%= rate %>/hour</a>
+                <% }); %>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2 class="cta-title">Looking for Your Next Opportunity?</h2>
+                <p class="cta-text">Browse thousands of job listings and find positions that match your desired salary
+                    range.</p>
+            </div>
+            <a href="https://jooble.org/jobs" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+                Find Jobs Now →
+            </a>
+        </div>
+    </div>
+</section>
