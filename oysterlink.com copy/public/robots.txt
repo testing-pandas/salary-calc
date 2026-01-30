@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salary-calculator-railway.app/sitemap.xml

@@ -1,0 +1,180 @@
+<article class="calculator-page">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="/">Salary Calculator</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>$<%= rate %> Per Hour</span>
+        </nav>
+
+        <!-- Main Calculator Section -->
+        <header class="calc-header">
+            <h1 class="calc-title">
+                <%= seoContent.h1 %>
+            </h1>
+            <p class="calc-intro">
+                <%= seoContent.intro %>
+            </p>
+        </header>
+
+        <!-- CTA Section -->
+        <div class="job-cta-section job-cta-top">
+            <div class="job-cta-card">
+                <div class="job-cta-icon">🔍</div>
+                <div class="job-cta-content">
+                    <h2 class="job-cta-title">Looking for $<%= rate %>/hour Jobs?</h2>
+                    <p class="job-cta-text">Browse thousands of job listings that pay around $<%= rate %> per hour.</p>
+                </div>
+                <a href="<%= joobleUrl %>" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+                    Search Jobs →
+                </a>
+            </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="calculator-card">
+            <div class="calc-input-section">
+                <label for="calcHourlyRate">Hourly Rate</label>
+                <div class="input-group">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="calcHourlyRate" value="<%= rate %>" min="1" max="500" step="1">
+                    <span class="input-suffix">/hour</span>
+                </div>
+
+                <div class="calc-settings">
+                    <div class="setting-group">
+                        <label for="hoursPerDay">Hours per Day</label>
+                        <input type="number" id="hoursPerDay" value="8" min="1" max="24">
+                    </div>
+                    <div class="setting-group">
+                        <label for="daysPerWeek">Days per Week</label>
+                        <input type="number" id="daysPerWeek" value="5" min="1" max="7">
+                    </div>
+                    <div class="setting-group">
+                        <label for="weeksPerYear">Weeks per Year</label>
+                        <input type="number" id="weeksPerYear" value="52" min="1" max="52">
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-results-section">
+                <div class="result-card result-daily">
+                    <div class="result-icon">📅</div>
+                    <div class="result-info">
+                        <span class="result-label">Daily Income</span>
+                        <span class="result-value" id="resultDaily">
+                            <%= formatCurrency(salaries.daily) %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-card result-weekly">
+                    <div class="result-icon">📆</div>
+                    <div class="result-info">
+                        <span class="result-label">Weekly Income</span>
+                        <span class="result-value" id="resultWeekly">
+                            <%= formatCurrency(salaries.weekly) %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-card result-biweekly">
+                    <div class="result-icon">🗓️</div>
+                    <div class="result-info">
+                        <span class="result-label">Bi-Weekly Income</span>
+                        <span class="result-value" id="resultBiweekly">
+                            <%= formatCurrency(salaries.biweekly) %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-card result-monthly">
+                    <div class="result-icon">📊</div>
+                    <div class="result-info">
+                        <span class="result-label">Monthly Income</span>
+                        <span class="result-value" id="resultMonthly">
+                            <%= formatCurrency(salaries.monthly) %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="result-card result-yearly result-highlight">
+                    <div class="result-icon">💰</div>
+                    <div class="result-info">
+                        <span class="result-label">Yearly Income</span>
+                        <span class="result-value" id="resultYearly">
+                            <%= formatCurrency(salaries.yearly) %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Sections -->
+        <div class="content-sections">
+            <section class="content-block">
+                <h2>
+                    <%= seoContent.sections.yearly.title %>
+                </h2>
+                <p>
+                    <%= seoContent.sections.yearly.content %>
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>
+                    <%= seoContent.sections.monthly.title %>
+                </h2>
+                <p>
+                    <%= seoContent.sections.monthly.content %>
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>
+                    <%= seoContent.sections.biweekly.title %>
+                </h2>
+                <p>
+                    <%= seoContent.sections.biweekly.content %>
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>
+                    <%= seoContent.sections.weekly.title %>
+                </h2>
+                <p>
+                    <%= seoContent.sections.weekly.content %>
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>
+                    <%= seoContent.sections.daily.title %>
+                </h2>
+                <p>
+                    <%= seoContent.sections.daily.content %>
+                </p>
+            </section>
+        </div>
+
+        <!-- Related Calculators -->
+        <section class="related-calculators">
+            <h2 class="section-title">More Hourly Rate Calculators</h2>
+            <div class="related-grid">
+                <% relatedRates.forEach(function(r) { %>
+                    <a href="/salary-calculator/<%= r %>-dollar-per-hour/" class="related-link">$<%= r %> Per Hour</a>
+                    <% }); %>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <a href="https://jooble.org/jobs" target="_blank" rel="noopener" class="btn btn-outline btn-large">
+                Browse All Job Listings →
+            </a>
+        </div>
+    </div>
+</article>

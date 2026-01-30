@@ -1,0 +1,23 @@
+{
+  "name": "salary-calculator",
+  "version": "1.0.0",
+  "description": "Hourly to yearly salary calculator - convert hourly wages to daily, weekly, monthly, and annual income",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "salary calculator",
+    "hourly to yearly",
+    "wage converter",
+    "income calculator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}

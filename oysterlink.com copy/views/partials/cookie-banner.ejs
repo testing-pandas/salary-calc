@@ -1,0 +1,59 @@
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <span class="cookie-icon">🍪</span>
+            <p>We use cookies to improve your experience. By continuing to use this site, you agree to our <a
+                    href="/cookie-policy/">Cookie Policy</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn btn-outline btn-sm" id="cookieSettings">Settings</button>
+            <button class="btn btn-primary btn-sm" id="cookieAccept">Accept All</button>
+        </div>
+    </div>
+</div>
+
+<div class="cookie-settings-modal" id="cookieSettingsModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Cookie Settings</h3>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Essential Cookies</h4>
+                    <p>Required for the website to function. Cannot be disabled.</p>
+                </div>
+                <label class="toggle disabled">
+                    <input type="checkbox" checked disabled>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Analytics Cookies</h4>
+                    <p>Help us understand how visitors use our website.</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="analyticsToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Functional Cookies</h4>
+                    <p>Remember your preferences like calculator settings.</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="functionalToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" id="rejectNonEssential">Essential Only</button>
+            <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+        </div>
+    </div>
+</div>
